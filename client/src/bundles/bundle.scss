@@ -1,8 +1,146 @@
-// Import core variables from silverstripe/admin
-@import "variables";
+$tp_green: #216e31;
+$breakpoint: 768px;
+$container_width: 1280px;
+$gap_size: 20px;
 
-// Import all of your SCSS stylesheets using relative paths from "components"
-// e.g. @import '../components/MyComponent/MyComponent.scss';
-
-// Import any legacy SCSS stylesheets
-// e.g. @import '../styles/MyComponent-ModelAdmin-legacy.scss
+.tp-footer {
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  padding: $gap_size 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  &,
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $gap_size;
+  }
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  strong {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  & > div:not(&__line) {
+    width: 300px;
+  }
+  &__tagline {
+    a {
+      display: block;
+    }
+  }
+  &__logo {
+    &--type {
+      &-tepukenga,
+      &-nzgovernment {
+        a {
+          display: block;
+          width: 200px;
+          margin: 0 auto;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+  &__line {
+    height: 2px;
+    width: 100%;
+    background-color: $tp_green;
+  }
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid #fff;
+    }
+  }
+  &__button {
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: $tp_green;
+      width: 200px;
+      border: 1px solid transparent;
+      margin: 0 auto;
+      padding: 15px 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      &::after {
+        content: " ";
+        display: block;
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' width='8px' height='13px' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='matrix(1 0 0 1 -756 -1207 )'%3E%3Cpath d='M 8 6.5 C 8 6.639784946236559 7.951093951093951 6.760752688172042 7.853281853281853 6.862903225806451 L 2.1235521235521237 12.846774193548388 C 2.025740025740026 12.948924731182796 1.9099099099099102 13 1.776061776061776 13 C 1.6422136422136424 13 1.5263835263835266 12.948924731182796 1.4285714285714286 12.846774193548388 L 0.14671814671814673 11.508064516129032 C 0.04890604890604898 11.405913978494624 0 11.284946236559138 0 11.145161290322582 C 0 11.005376344086022 0.04890604890604898 10.884408602150538 0.14671814671814673 10.782258064516128 L 4.2471042471042475 6.5 L 0.14671814671814673 2.2177419354838714 C 0.04890604890604898 2.115591397849461 0 1.9946236559139778 0 1.8548387096774188 C 0 1.7150537634408582 0.04890604890604898 1.5940860215053752 0.14671814671814673 1.4919354838709677 L 1.4285714285714286 0.15322580645161255 C 1.5263835263835266 0.0510752688172037 1.6422136422136424 0 1.776061776061776 0 C 1.9099099099099102 0 2.025740025740026 0.0510752688172037 2.1235521235521237 0.15322580645161255 L 7.853281853281853 6.137096774193549 C 7.951093951093951 6.239247311827956 8 6.360215053763441 8 6.5 Z ' fill-rule='nonzero' fill='%23ffffff' stroke='none' transform='matrix(1 0 0 1 756 1207 )' /%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 12px;
+        width: 12px;
+      }
+      &:hover {
+        border-color: #fff;
+      }
+    }
+  }
+  @media (min-width: $breakpoint) {
+    text-align: left;
+    & > div:not(&__line) {
+      width: $container_width;
+      max-width: 100%;
+    }
+    &__section {
+      flex-direction: row;
+      justify-content: flex-start;
+      &--type {
+        &-bottom {
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+        &-stack {
+          flex-direction: column;
+        }
+        &-start {
+          align-items: flex-start;
+        }
+        &-end {
+          align-items: flex-end;
+        }
+        &-big-gap {
+          gap: 3rem;
+        }
+      }
+    }
+    &__logo {
+      &--type {
+        &-tepukenga {
+          border-right: 1px solid #fff;
+          padding-right: $gap_size;
+        }
+        &-nzgovernment {
+          a {
+            width: 250px;
+          }
+        }
+      }
+    }
+    &__tagline {
+      width: 100%;
+      a {
+        display: inline;
+        margin-left: $gap_size;
+      }
+    }
+  }
+}
