@@ -10,7 +10,7 @@
             </a>
         </div>
         <div class="tp-footer__tagline">
-            Otago Polytechnic is part of Te Pūkenga - New Zealand Institute of Skills and Technology <a href="https://www.op.ac.nz/about-us/te-pukenga" target="_blank">Learn more</a>
+            $SiteConfig.Title is a business division of Te Pūkenga - New Zealand Institute of Skills and Technology <a href="https://www.op.ac.nz/about-us/te-pukenga" target="_blank">learn more</a>
         </div>
     </div>
     <div class="tp-footer__line"></div>
@@ -37,7 +37,7 @@
                     <img src="$ResourceURL(vendor/otago/tepukenga-footer/client/img/nz_government.png)" alt="NZ Government" />
                 </a>
             </div>
-            <div>Copyright © $Now.Format('y') $SiteConfig.Title</div>
+            <div>Copyright © Te Pūkenga</div>
         </div>
     </div>
 </div>
