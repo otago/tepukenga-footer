@@ -30,6 +30,5 @@
             "client/img"
         ]
     },
-    "minimum-stability": "dev",
     "prefer-stable": true
 }
